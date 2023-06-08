@@ -37,7 +37,7 @@ Route::delete('/cart/remove',[CartController::class,'delete']);
 
 
 Route::get('/checkout',[CheckoutController::class,'show']);
-Route::post('checkout',[CheckoutController::class,'store']);
+Route::post('checkout',[CheckoutController::class,'store'])->name('checkout.store');
 
 
 Route::get('/about', function () {

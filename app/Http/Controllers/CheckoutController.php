@@ -20,8 +20,10 @@ class CheckoutController extends Controller
              'subtotal'=>$subtotal
 
          ]);
+    }
 
-
-
+    public function store(Request $request)
+    {
+        dd($request->all());
     }
 }

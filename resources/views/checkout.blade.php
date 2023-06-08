@@ -13,54 +13,55 @@
             </div>
             <div class="checkout__form">
                 <h4>Billing Details</h4>
-                <form action="#">
+                <form action="{{route('checkout.store')}}" method="post">
+                    @csrf
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Fist Name<span>*</span></p>
-                                        <input type="text">
+                                        <input type="text" name="first_name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Last Name<span>*</span></p>
-                                        <input type="text">
+                                        <input type="text" name="last_name">
                                     </div>
                                 </div>
                             </div>
                             <div class="checkout__input">
                                 <p>Country<span>*</span></p>
-                                <input type="text">
+                                <input type="text" name="country">
                             </div>
                             <div class="checkout__input">
                                 <p>Address<span>*</span></p>
-                                <input type="text" placeholder="Street Address" class="checkout__input__add">
+                                <input type="text" name ="address" placeholder="Street Address" class="checkout__input__add">
                             </div>
                             <div class="checkout__input">
                                 <p>District<span></p>
-                                <input type="text">
+                                <input type="text" name="district">
                             </div>
                             <div class="checkout__input">
                                 <p>Province<span>*</span></p>
-                                <input type="text">
+                                <input type="text" name="province">
                             </div>
                             <div class="checkout__input">
                                 <p>Postcode / ZIP<span>*</span></p>
-                                <input type="text">
+                                <input type="text" name="zip">
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Phone<span>*</span></p>
-                                        <input type="text">
+                                        <input type="text" name="phone">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Email<span>*</span></p>
-                                        <input type="text">
+                                        <input type="text" name="email">
                                     </div>
                                 </div>
                             </div>
@@ -89,14 +90,14 @@
                                 <div class="checkout__input__checkbox">
                                     <label for="COD">
                                         Cash on Delivery
-                                        <input type="checkbox" id="cod">
+                                        <input type="radio" name="payment_gateway" value="cash_on_delivery" id="COD">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="checkout__input__checkbox">
                                     <label for="khalti">
                                         Khalti
-                                        <input type="checkbox" id="khalti">
+                                        <input type="radio" name="payment_gateway" value="khalti" id="khalti">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +27,7 @@ Route::get('/', function () {
 
 
 Route::get('/login', [LoginController::class, 'authenticate']);
-Route::get('/home', [HomeController::class,'index']);
+Route::get('/home', [HomeController::class,'index'])->name('home');
 Route::get('/products', [ProductController::class,'index']);
 Route::get('/product/{slug}', [ProductController::class,'show']);
 
@@ -39,6 +40,8 @@ Route::delete('/cart/remove',[CartController::class,'delete']);
 Route::get('/checkout',[CheckoutController::class,'show']);
 Route::post('checkout',[CheckoutController::class,'store'])->name('checkout.store');
 
+Route::get('/payment/{paymentGateway}',[PaymentController::class,'show'])->name('payment.show');
+Route::get('/thankyou',[PaymentController::class,'thankyou'])->name('thankyou');
 
 Route::get('/about', function () {
     return view('about');

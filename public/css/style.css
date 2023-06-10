@@ -2132,6 +2132,14 @@ ol {
 	margin-bottom: 20px;
 }
 
+.checkout__input.invalid input{
+	border: 1px solid red;
+}
+
+.checkout__input.invalid small{
+color: red;
+}
+
 .checkout__input input::placeholder {
 	color: #b2b2b2;
 }
